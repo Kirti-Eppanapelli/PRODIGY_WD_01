@@ -1,0 +1,438 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: url('bg.png') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+    content-visibility: true;
+}
+
+header {
+    background-color: rgba(185, 194, 204, 0.2); /* Low transparency for the header */
+    padding: 1%;
+}
+ 
+.logo {
+    margin-right: auto; /* Push the logo to the left */
+}
+
+.logo img {
+    height: 60px; /* Set the height of your logo */
+    width: 130%;
+    transform: rotate(170deg);
+}
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+    background-color: rgba(0, 0, 0, 0.2); /* Low transparency for the navigation bar */
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+nav li {
+    margin-left: 0; /* No margin between navigation items */
+}
+
+nav a {
+    text-decoration: none;
+    display: inline-block;
+    color: #fff;
+    font-weight: bold;
+    font-family:'Courier New', Courier, monospace;
+    font-size: 18px;
+    padding: 15px 20px; /* Increased padding for a more button-like appearance */
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+nav a:hover {
+    background-color: rgba(241, 244, 247, 0.5); /* Slightly darker background on hover */
+}
+
+.main-content {
+    padding: 2rem;
+    text-align: left;
+    font-family:'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 300%;
+    text-transform: uppercase; /* Convert text to uppercase for a more stylized look */
+    letter-spacing: 2px; /* Adjust letter spacing for better visibility */
+    text-shadow: 0 0 10px rgb(5, 5, 5), 0 0 20px rgb(20, 17, 17), 0 0 30px rgb(234, 234, 243);
+    white-space: nowrap; /* Prevent text from wrapping to the next line */
+    overflow: hidden; /* Hide overflow to ensure the text stays in one line */
+    animation: slideIn 2s ease-out;
+    position: relative;
+}
+.main-content1 {
+    padding: 1rem;
+    text-align: left;
+    font-family:'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 150%;
+    text-transform: uppercase; /* Convert text to uppercase for a more stylized look */
+    letter-spacing: 2px; /* Adjust letter spacing for better visibility */
+    text-shadow: 0 0 10px rgb(5, 5, 5), 0 0 20px rgb(20, 17, 17), 0 0 30px rgb(234, 234, 243);
+    white-space: nowrap; /* Prevent text from wrapping to the next line */
+    overflow: hidden; /* Hide overflow to ensure the text stays in one line */
+    animation: slideIn 2s ease-out;
+    position: relative;
+}
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+
+.main-content p {
+    font-family:'Courier New', Courier, monospace;
+    font-size: 17px; /* Set the font size to 20 pixels or your desired size */
+    text-align: justify;
+}
+
+.center-image {
+    text-align: center;
+    margin-left: 60%;
+    margin-top: -300px;
+    position: relative;
+}
+
+.center-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.7s ease-in-out; /* Adjust the duration for a smooth movement */
+}
+
+.center-image img:hover {
+    transform: translate(30%, -30%); /* Move the image upward and to the right */
+    transition-duration: 4s;
+}
+
+footer {
+    background-color: #010508;
+    padding: 1rem;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* ... (your existing CSS remains unchanged) */
+
+.about-content {
+    display: flex;
+    height: 100vh;
+}
+
+/* ... (your existing CSS remains unchanged) */
+
+.image-section {
+    flex: 1;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-section img {
+    width: 70%; /* Adjust the width as needed */
+    height: 50%; /* Set height to auto to maintain aspect ratio */
+    border-radius: 50%; /* Make the image a circle */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    transition: transform 0.4s ease-in-out, box-shadow 0.7s ease-in-out; /* Added transitions for transform and box-shadow */
+}
+
+/* Optional: Hover effect */
+.image-section img:hover {
+    transform: scale(1.1); /* Scale the image on hover for a zoom effect */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+}
+
+
+
+
+
+.info-section {
+    flex: 1;
+    padding: 120px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 25px;
+    text-align: justify;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgb(5, 5, 5), 0 0 20px rgb(20, 17, 17), 0 0 30px rgb(234, 234, 243);
+    position: relative;
+    z-index: 1;
+}
+
+.info-section::before {
+    content: "";
+    position: absolute;
+    top: 200px; /* Adjust the top spacing */
+    left: 75px; /* Adjust the left spacing */
+    right: 75px; /* Adjust the right spacing */
+    bottom: 160px; 
+    z-index: -1;
+    border-radius: 10px;
+    background-color: rgba(15, 14, 14, 0.7);
+}
+
+.info-section p {
+    font-family: 'Courier New', Courier;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: justify;
+    text-shadow: 0 0 10px rgb(5, 5, 5), 0 0 20px rgb(20, 17, 17), 0 0 30px rgb(234, 234, 243);
+    opacity: 0;
+    animation: fadeIn 3s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.container {
+    display: table;
+    width: 100%;
+}
+
+.nav-column {
+    display: table-cell;
+    vertical-align: top;
+}
+
+.karaoke-nav {
+    background-color: rgba(65, 42, 158, 0.061);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 7%;
+    height: 80vh;
+    width: 100px;
+    transition: background-color 0.3s;
+    box-shadow: 4px 4px 4px 4px rgba(249, 249, 250, 0.3);
+}
+
+.head-temp {
+    padding-bottom: 0.1cm;
+    padding-top: 2%;
+    background: none;
+    margin-top: 0;
+}
+
+.karaoke-nav a {
+        background-color: rgba(65, 42, 158, 0.061);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        font-size: 120%;
+        height: 40px; /* Adjusted height */
+        width: 200px;
+        transition: background-color 0.3s;
+        box-shadow: 4px 4px 4px 4px rgba(249, 249, 250, 0.3);
+}
+
+.karaoke-nav a:hover {
+    border-bottom: 4px solid rgb(207, 87, 87, 0.37);
+    background-color: rgba(207, 87, 87, 0.37);
+}
+
+.content-column {
+    display: table-cell;
+    vertical-align: top;
+    height: 1%;
+}
+
+.planet-info {
+    padding: 120px;
+    font-weight: bold;
+    font-size: 110%;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgb(5, 5, 5), 0 0 20px rgb(20, 17, 17), 0 0 30px rgb(234, 234, 243);
+    white-space: nowrap;
+    font-family: 'Courier New', Courier;
+    
+}
+
+.planet-info img {
+    max-width: 200%;
+    height: 300px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+/* Add the following styles to position the content beside the nav */
+.content-column {
+    width: 900%; /* Adjusted width to fill the remaining space */
+}
+/* Add this to your styles.css file */
+
+.center-video {
+    text-align: center;
+    padding: 30px;
+    margin-left: 2%;
+    margin-right: 2%;
+    
+}
+
+.center-video video {
+    max-width: 60%;
+    max-height: 20%;
+    border: 2px solid rgba(31, 6, 146, 0.452); /* Add a border to the video */
+    border-radius: 10px; /* Optional: Add rounded corners to the border */
+}
+.main-content2{
+    padding: 2rem;
+    text-align: left;
+    font-family:'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 100%;
+     /* Convert text to uppercase for a more stylized look */
+    letter-spacing: 2px; /* Adjust letter spacing for better visibility */
+    text-shadow: 0 0 10px rgb(5, 5, 5), 0 0 20px rgb(20, 17, 17), 0 0 30px rgb(234, 234, 243);
+    white-space: nowrap; /* Prevent text from wrapping to the next line */
+    overflow: hidden; /* Hide overflow to ensure the text stays in one line */
+    animation: slideIn 1s ease-out;
+    position: relative;
+}
+
+
+footer {
+    background-color: rgb(12, 3, 3);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+.container1{
+    min-height: 100vh;
+    background: #08071d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("bg.png") no-repeat center center/cover;
+}
+
+.container1 form{
+    width: 670px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
+    border-radius: 15px;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    flex-wrap: wrap;
+}
+
+.container1 form h1{
+    color: #fff;
+    font-weight: 500;
+    font-family:'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 200%;
+     /* Convert text to uppercase for a more stylized look */
+    letter-spacing: 2px; /* Adjust letter spacing for better visibility */
+    text-shadow: 0 0 10px rgb(5, 5, 5), 0 0 20px rgb(20, 17, 17), 0 0 30px rgb(234, 234, 243);
+    white-space: nowrap;
+    margin-top: 20px;
+    width: 500px;
+    text-align: center;
+}
+
+.container1 form input{
+    width: 290px;
+    height: 40px;
+    padding-left: 10px;
+    outline: none;
+    border: none;
+    font-size: 15px;
+    color: rgb(255, 255, 255);
+    margin-bottom: 10px;
+    background: none;
+    border-bottom: 2px solid #fff;
+}
+
+.container1 form input::placeholder{
+    color: #ddd;
+}
+
+.container1 form #lastName,
+.container1 form #mobile{
+    margin-left: 20px;
+}
+
+.container1 form h4{
+    color: #fff;
+    font-weight: 300;
+    width: 600px;
+    margin-top: 20px;
+}
+
+.container1 form textarea{
+    background: none;
+    border: none;
+    border-bottom: 2px solid #fff;
+    color: #fff;
+    font-weight: 200;
+    font-size: 15px;
+    padding: 10px;
+    outline: none;
+    min-width: 600px;
+    max-width: 600px;
+    min-height: 80px;
+    max-height: 80px;
+}
+
+textarea::-webkit-scrollbar{
+    width: 1em;
+}
+
+textarea::-webkit-scrollbar-thumb{
+    background-color: rgba(194,194,194,0.713);
+}
+
+.container1 form #button{
+    border: none;
+    background: #fff;
+    border-radius: 5px;
+    margin-top: 8px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #333;
+    width: 100px;
+    padding: 0;
+    margin-right: 10px;
+    margin-bottom: 900px;
+    transition: 0.3s;
+}
+
+.container1 form #button:hover{
+    opacity: 0.7;
+}
+
