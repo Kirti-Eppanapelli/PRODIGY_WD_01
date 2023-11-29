@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Planet Karaoke</title>
+</head>
+<body>
+    <table class="container">
+        <tr>
+            <td class="nav-column">
+                <nav>
+                    <ul>
+                        <li class="logo"><img src="logo.png" alt="Logo"></li>
+                        <li><a href="index.html">HOME</a></li>
+                        <li><a href="about.html" id="planetsLink">ABOUT</a></li>
+                        <li><a href="visualize.html" id="exploreLink">VISUALIZE</a></li>
+                        <li><a href="contact.html" id="feedbackLink">CONTACT</a></li>
+                    </ul>
+                </nav>
+                <section class="main-content1">
+                    <h1>PLANETS TOUR</h1>   
+                </section>
+                <header class="head-temp">
+                    <nav class="karaoke-nav">
+                        <a href="#" data-planet="1">1.Mercury</a>
+                        <a href="#" data-planet="2">2.Venus</a>
+                        <a href="#" data-planet="3">3.Earth</a>
+                        <a href="#" data-planet="4">4.Mars</a>
+                        <a href="#" data-planet="5">5.Jupiter</a>
+                        <a href="#" data-planet="6">6.Saturn</a>
+                        <a href="#" data-planet="7">7.Uranus</a>
+                        <a href="#" data-planet="8">8.Neptune</a>
+                    </nav>
+                </header>
+            </td>
+            <td class="content-column">
+                <div class="planet-info" id="planet-info">
+                    <p></p>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    <footer>
+        <p>&copy; 2023 Space Tour. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var karaokeNav = document.querySelector('.karaoke-nav');
+            var planetInfoDiv = document.getElementById('planet-info');
+
+            karaokeNav.addEventListener('click', function (event) {
+                event.preventDefault();
+                var planetNumber = event.target.getAttribute('data-planet');
+                showPlanetInfo(planetNumber);
+            });
+
+            function showPlanetInfo(planetNumber) {
+                var planetInfo = getPlanetInformation(planetNumber);
+                var infoHTML = '<h1>' + planetInfo.name + '</h1>' +
+                    '<p>' + planetInfo.description + '</p>' +
+                    '<table>' +
+                    '<tr><td>Size :</td><td>' + planetInfo.size + '</td></tr>' +
+                    '<tr><td>Weight :</td><td>' + planetInfo.weight + '</td></tr>' +
+        
+                    '</table>';
+
+                if (planetInfo.gif) {
+                    infoHTML += '<img src="' + planetInfo.gif + '" alt="' + planetInfo.name + '">';
+                }
+
+                planetInfoDiv.innerHTML = infoHTML;
+            }
+            function getPlanetInformation(planetNumber) {
+                var planetInformation = {
+                    '1': {
+                        name: 'Mercury',
+                        description: 'Mercury is the smallest and closest planet to the Sun.',
+                        gif: 'mercury.gif',
+                        size: '4,880 kilometers in diameter',
+                        weight: '3.30 x 10^23 kg',
+                        specialty: 'Mercury has extreme temperature variations, ranging from extremely hot to extremely cold.'
+                    },
+                    '2': {
+                        name: 'Venus',
+                        description: 'Venus is the second planet from the Sun and is similar in size and structure to Earth.',
+                        gif: 'venus.gif',
+                        size: '12,104 kilometers in diameter',
+                        weight: '4.87 x 10^24 kg',
+                        specialty: 'Venus has a thick atmosphere composed mainly of carbon dioxide, causing a runaway greenhouse effect.'
+                    },
+                    '3': {
+                        name: 'Earth',
+                        description: 'Earth is the third planet, the only known celestial body to support life.',
+                        gif: 'earth.gif',
+                        size: '12,742 kilometers in diameter',
+                        weight: '5.97 x 10^24 kg',
+                        specialty: 'Earth is the only known planet to have liquid water on its surface and support a diverse range of life.'
+                    },
+                    '4': {
+                        name: 'Mars',
+                        description: 'Mars is the fourth planet from the Sun and is often referred to as the "Red Planet."',
+                        gif: 'mars.gif',
+                        size: '6,779 kilometers in diameter',
+                        weight: '6.39 x 10^23 kg',
+                        specialty: 'Mars has the largest volcano and canyon in the solar system, Olympus Mons, and Valles Marineris, respectively.'
+                    },
+                    '5': {
+                        name: 'Jupiter',
+                        description: 'Jupiter is the largest planet in our solar system.',
+                        gif: 'jupiter.gif',
+                        size: '139,820 kilometers in diameter',
+                        weight: '1.90 x 10^27 kg',
+                        specialty: 'Jupiter has a strong magnetic field and more than 75 moons, including the four largest known as the Galilean moons.'
+                    },
+                    '6': {
+                        name: 'Saturn',
+                        description: 'Saturn is known for its stunning ring system.',
+                        gif: 'saturn.gif',
+                        size: '116,460 kilometers in diameter',
+                        weight: '5.68 x 10^26 kg',
+                        specialty: 'Saturn\'s rings are made primarily of ice particles with a smaller amount of rocky debris and dust.'
+                    },
+                    '7': {
+                        name: 'Uranus',
+                        description: 'Uranus is a gas giant with a unique rotation axis.',
+                        gif: 'uranus.gif',
+                        size: '50,724 kilometers in diameter',
+                        weight: '8.68 x 10^25 kg',
+                        specialty: 'Uranus rotates on its side, possibly due to a collision with a massive object early in its history.'
+                    },
+                    '8': {
+                        name: 'Neptune',
+                        description: 'Neptune is the farthest known planet from the Sun in our solar system.',
+                        gif: 'neptune.gif',
+                        size: '49,244 kilometers in diameter',
+                        weight: '1.02 x 10^26 kg',
+                        specialty: 'Neptune has strong winds, with the fastest recorded winds in the solar system, reaching up to 1,500 miles per hour.'
+                    }
+                    // Add more planet information as needed
+                };
+
+                return planetInformation[planetNumber] || { 
+                    name: 'Unknown Planet', 
+                    description: 'No information available.', 
+                    gif: '',
+                    size: 'Unknown',
+                    weight: 'Unknown',
+                    specialty: 'Unknown'
+                };
+            }
+        });
+    </script>
+</body>
+</html>
